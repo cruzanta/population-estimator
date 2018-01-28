@@ -144,8 +144,8 @@ def display_export_success_and_return_to_main_menu(screen, file_name):
     # Displays a message that indicates that a export file has been created
     # until the user chooses to return to the Main Menu.
     first_line_num = 0
-    message = ('Success! Your file, %s.csv, has been created in the %s folder.'
-               % (file_name, EXPORT))
+    message = ('Success! %s.csv has been created in the following directory: %s'
+               % (file_name, EXPORT_FOLDER))
     prompt = 'Enter "r" to return to the Main Menu:'
     return_keys = ['r', 'R']
 
