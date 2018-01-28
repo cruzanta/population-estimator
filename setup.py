@@ -3,7 +3,7 @@
 from setuptools import setup
 
 setup(
-    name='population_estimator',
+    name='population-estimator',
     packages=['population_estimator'],
     version='0.3.0',
     description='A TUI app for accessing annual population estimates',
@@ -11,7 +11,7 @@ setup(
     author_email='cruzanta@outlook.com',
     license='MIT',
     entry_points={'console_scripts': [
-        'population_estimator = population_estimator.tui_app:main']},
+        'population-estimator = population_estimator.tui_app:main']},
     url='https://github.com/cruzanta/population_estimator',
     download_url='https://github.com/cruzanta/population_estimator/archive/0.3.tar.gz',
     keywords=['population', 'tui', 'curses'],
