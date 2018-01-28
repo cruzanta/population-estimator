@@ -4,12 +4,14 @@
 Constants used in the population_estimator.py module.
 """
 
+import os
+
 # First and last years in the data set.
 FIRST_YEAR = 2010  # Modify if a previous year of data is added.
 LAST_YEAR = 2016  # Modify if a future year of data is added.
 
 # Path to CSV files
-CSV_PATH = 'population_estimator/data/'
+CSV_PATH = '%s/data/' % (os.path.dirname(__file__))
 
 # Names of the CSV files.
 NATION_POP_CSV = (
@@ -63,7 +65,7 @@ VIEW = 'View'
 EXPORT = 'Export'
 
 # Name of the folder that contains the exported files.
-EXPORT_FOLDER = 'population_estimator/export'
+EXPORT_FOLDER = '%s/export' % (os.path.dirname(__file__))
 
 # Names of the keys in the dictionary that store thes user's selections.
 GEOGRAPHIES = 'Geographies'
