@@ -5,7 +5,7 @@ from setuptools import setup
 setup(
     name='population-estimator',
     packages=['population_estimator'],
-    version='0.3.2',
+    version='0.3.3',
     include_package_data=True,
     description='A TUI app for accessing annual population estimates',
     author='Anthony Cruz',
@@ -14,7 +14,7 @@ setup(
     entry_points={'console_scripts': [
         'population-estimator = population_estimator.tui_app:main']},
     url='https://github.com/cruzanta/population_estimator',
-    download_url='https://github.com/cruzanta/population_estimator/archive/0.3.2.tar.gz',
+    download_url='https://github.com/cruzanta/population_estimator/archive/0.3.3.tar.gz',
     keywords=['population', 'tui', 'curses'],
     classifiers=[],
 )
