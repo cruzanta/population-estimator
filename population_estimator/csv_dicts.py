@@ -62,8 +62,8 @@ def dicts_to_csv(list_of_dicts, file_name):
         bird, Jim, 4
     """
     with open('%s.csv' % (file_name), 'w') as csvfile:
-        fieldnames = list_of_dicts[0].keys()  # CSV file header row.
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        header_column_names = list_of_dicts[0].keys()  # CSV file header row.
+        writer = csv.DictWriter(csvfile, fieldnames=header_column_names)
         writer.writeheader()
 
         for dct in list_of_dicts:
