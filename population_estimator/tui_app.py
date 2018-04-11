@@ -246,23 +246,33 @@ def access_data_menu(screen, user_selections):
                     ' the menu below.') % (
         user_selections.get(SORTED_BY).lower(),
         user_selections.get(GEO_DIVISION).lower())
-    menu_items = [SEARCH, VIEW, EXPORT]
+
+    if user_selections.get(GEO_DIVISION) == NATION:
+        menu_items = ['View', 'Export to CSV']
+    elif user_selections.get(GEO_DIVISION) == REGION:
+        menu_items = ['View All', 'Export All to CSV']
+    elif user_selections.get(GEO_DIVISION) == DIVISION:
+        menu_items = ['View Top 5 Divisions', 'Export All Divisions to CSV', 'Search for a Division']
+    elif user_selections.get(GEO_DIVISION) == STATE:
+        menu_items = ['View Top 5 States', 'Export All States to CSV', 'Search for a State']
+    elif user_selections.get(GEO_DIVISION) == COUNTY:
+        menu_items = ['View Top 5 Counties', 'Export All Counties to CSV', 'Search for a County']
+    elif user_selections.get(GEO_DIVISION) == METRO:
+        menu_items = ['View Top 5 Metropolitan Areas', 'Export All Metropolitan Areas to CSV', 'Search for a Metropolitan Area']
+    elif user_selections.get(GEO_DIVISION) == MICRO:
+        menu_items = ['View Top 5 Micropolitan Areas', 'Export All Micropolitan Areas to CSV', 'Search for a Micropolitan Area']
+
     prompt = 'Selection:'
 
     selection = curses_io.get_user_menu_selection(screen, first_line_num,
                                                   menu_heading, menu_items,
                                                   prompt)
-    if selection == SEARCH:
-        user_selections[SEARCH_GEO] = search_for_geography(screen,
-                                                           user_selections)
-        geo_dicts = get_geography_dicts(user_selections)
-        display_geo_dicts_and_return_to_main_menu(screen, geo_dicts,
-                                                  user_selections)
-    elif selection == VIEW:
+
+    if selection == menu_items[0]:
         geo_dicts = get_geography_dicts(user_selections)
         display_geo_dicts_and_return_to_main_menu(screen, geo_dicts[:5],
                                                   user_selections)
-    elif selection == EXPORT:
+    elif selection == menu_items[1]:
         geo_dicts = get_geography_dicts(user_selections)
         prompt_heading = 'Please enter a name for the CSV file below.'
         prompt = 'File Name:'
@@ -274,6 +284,12 @@ def access_data_menu(screen, user_selections):
                                                              prompt)
         csv_dicts.dicts_to_csv(geo_dicts, '%s/%s' % (EXPORT_FOLDER, file_name))
         display_export_success_and_return_to_main_menu(screen, file_name)
+    elif selection == menu_items[2]:
+        user_selections[SEARCH_GEO] = search_for_geography(screen,
+                                                           user_selections)
+        geo_dicts = get_geography_dicts(user_selections)
+        display_geo_dicts_and_return_to_main_menu(screen, geo_dicts,
+                                                  user_selections)
 
 
 def main():
