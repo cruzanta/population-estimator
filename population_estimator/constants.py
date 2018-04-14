@@ -8,7 +8,7 @@ import os
 
 # First and last years in the data set.
 FIRST_YEAR = 2010  # Modify if a previous year of data is added.
-LAST_YEAR = 2016  # Modify if a future year of data is added.
+LAST_YEAR = 2017  # Modify if a future year of data is added.
 
 # Path to CSV files
 CSV_PATH = '%s/data/' % (os.path.dirname(__file__))
