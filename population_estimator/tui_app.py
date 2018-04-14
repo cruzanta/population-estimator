@@ -306,8 +306,6 @@ def main():
             selections = geographical_divisions_menu(screen, {})
             selections = population_estimates_menu(screen, selections)
             access_data_menu(screen, selections)
-    except curses.error:
-        curses.endwin()
     except KeyboardInterrupt:
         curses.endwin()
     finally:

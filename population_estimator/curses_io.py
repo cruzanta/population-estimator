@@ -12,7 +12,12 @@ import textwrap
 def display_string(screen, a_string, output_line):
     # Paints a string on a text-based terminal window.
     _, width = screen.getmaxyx()
-    screen.addstr(output_line, 0, textwrap.fill(a_string, width - 1))
+
+    try:
+        screen.addstr(output_line, 0, textwrap.fill(a_string, width - 1))
+    except curses.error:
+        screen.addstr(0, 0, textwrap.fill(
+            'Terminal window too small for output! Please resize. ', width - 1))
 
     return output_line
 
