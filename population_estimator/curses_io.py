@@ -34,6 +34,8 @@ def display_list_items(screen, a_list, output_line):
 def display_formatted_dict(screen, dct, output_line):
     # Paints each key, value pair of a dict on a text-based terminal window.
     for key, value in dct.items():
+        if isinstance(value, int):
+            value = '{:,}'.format(value)
         formatted_dict = '%s: %s' % (key, value)
         output_line = display_string(screen, formatted_dict, output_line)
         output_line += 1
