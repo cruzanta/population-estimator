@@ -178,7 +178,7 @@ def geographical_divisions_menu(screen, user_selections):
     # Adds a list of Geography objects to a dictionary that contains the user's
     # selections and returns the dictionary.
     first_line_num = 0
-    menu_heading = ('Please select a a geographical division from the menu ' +
+    menu_heading = ('Please select a geographical division from the menu ' +
                     'below.')
     menu_items = [NATION, REGION, DIVISION, STATE, COUNTY, METRO, MICRO]
     prompt = 'Selection:'
@@ -242,25 +242,32 @@ def access_data_menu(screen, user_selections):
     # for a geography name, viewing each geography's population data, or
     # exporting all the population data to a CSV file.
     first_line_num = 0
-    menu_heading = ('Please select a method of accessing the %s for %ss from' +
-                    ' the menu below.') % (
-        user_selections.get(SORTED_BY).lower(),
-        user_selections.get(GEO_DIVISION).lower())
+    menu_heading = ('Please select a method of accessing the %s %s from the' +
+                    ' menu below.') % (
+        user_selections.get(GEO_DIVISION),
+        user_selections.get(SORTED_BY))
 
     if user_selections.get(GEO_DIVISION) == NATION:
         menu_items = ['View', 'Export to CSV']
     elif user_selections.get(GEO_DIVISION) == REGION:
         menu_items = ['View All', 'Export All to CSV']
     elif user_selections.get(GEO_DIVISION) == DIVISION:
-        menu_items = ['View Top 5 Divisions', 'Export All Divisions to CSV', 'Search for a Division']
+        menu_items = ['View Top 5 Divisions',
+                      'Export All Divisions to CSV', 'Search for a Division']
     elif user_selections.get(GEO_DIVISION) == STATE:
-        menu_items = ['View Top 5 States', 'Export All States to CSV', 'Search for a State']
+        menu_items = ['View Top 5 States',
+                      'Export All States to CSV', 'Search for a State']
     elif user_selections.get(GEO_DIVISION) == COUNTY:
-        menu_items = ['View Top 5 Counties', 'Export All Counties to CSV', 'Search for a County']
+        menu_items = ['View Top 5 Counties',
+                      'Export All Counties to CSV', 'Search for a County']
     elif user_selections.get(GEO_DIVISION) == METRO:
-        menu_items = ['View Top 5 Metropolitan Areas', 'Export All Metropolitan Areas to CSV', 'Search for a Metropolitan Area']
+        menu_items = ['View Top 5 Metropolitan Areas',
+                      'Export All Metropolitan Areas to CSV',
+                      'Search for a Metropolitan Area']
     elif user_selections.get(GEO_DIVISION) == MICRO:
-        menu_items = ['View Top 5 Micropolitan Areas', 'Export All Micropolitan Areas to CSV', 'Search for a Micropolitan Area']
+        menu_items = ['View Top 5 Micropolitan Areas',
+                      'Export All Micropolitan Areas to CSV',
+                      'Search for a Micropolitan Area']
 
     prompt = 'Selection:'
 

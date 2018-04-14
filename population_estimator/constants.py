@@ -54,15 +54,15 @@ METRO = 'Metropolitan'
 MICRO = 'Micropolitan'
 
 # Population Estimates Menu options.
-MOST_RECENT_POP = 'Most Recent Population Estimates'
+MOST_RECENT_POP = '%s Population Estimates' % (LAST_YEAR)
 CAGR = 'Compound Annual Growth Rate Estimates (%s-%s)' % (
        FIRST_YEAR, LAST_YEAR)
-PROJECTED_POP = 'Projected Population Estimates for a Given Year'
+PROJECTED_POP = 'Projected Population Estimates for a Specific Year'
 
 # Access Data Menu options.
-SEARCH = 'Search'
-VIEW = 'View'
-EXPORT = 'Export'
+# SEARCH = 'Search'
+# VIEW = 'View'
+# EXPORT = 'Export'
 
 # Name of the folder that contains the exported files.
 EXPORT_FOLDER = '%s/export' % (os.path.dirname(__file__))
