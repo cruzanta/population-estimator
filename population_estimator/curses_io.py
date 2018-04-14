@@ -58,7 +58,7 @@ def display_string_with_prompt(screen, first_line_num, a_string, prompt):
     output_line = first_line_num
     output_line = display_string(screen, a_string, output_line)
 
-    output_line += 2
+    output_line += 3
     output_line = display_string(screen, prompt, output_line)
 
     screen.refresh()
