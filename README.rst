@@ -31,10 +31,6 @@ To run::
 
     $ population-estimator
 
-Demo
-====
-.. image:: https://github.com/cruzanta/population-estimator/blob/master/population_estimator_demo.gif?raw=true
-
 Acknowledgments
 ===============
 
