@@ -11,25 +11,14 @@ Prerequisites
 
     * Python 2.7
 
-Installation
-============
-
-To install using pip::
-
-    $ pip install population-estimator
-
-To install by cloning the repository::
-
-    $ git clone https://github.com/cruzanta/population-estimator.git
-    $ cd population-estimator
-    $ python setup.py install
-
 Usage
 =====
 
 To run::
 
-    $ population-estimator
+    $ git clone https://github.com/cruzanta/population-estimator.git
+    $ cd population-estimator/population_estimator
+    $ python tui_app.py
 
 Acknowledgments
 ===============
